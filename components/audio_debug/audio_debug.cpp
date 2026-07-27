@@ -25,9 +25,9 @@ void AudioDebug::loop() {
 
 #ifdef USE_ESP32
   ESP_LOGI(TAG,
-           "Heap: %u bytes, Largest block: %u bytes",
-           ESP.getFreeHeap(),
-           heap_caps_get_largest_free_block(MALLOC_CAP_8BIT));
+         "Heap: %u bytes, Largest block: %u bytes",
+         heap_caps_get_free_size(MALLOC_CAP_8BIT),
+         heap_caps_get_largest_free_block(MALLOC_CAP_8BIT));
 #endif
 }
 
